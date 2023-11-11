@@ -25,7 +25,7 @@ namespace ConsoleApp1
 
             await DB.InsertAsync(entities);
 
-            var resultset = await GetAllAsync(x => new { id = x.ID, text = $"{x.Name} ({x.This})" });
+            var resultset = await GetAllAsync(x => new { id = x.ID, text = x.Name + " (" + x.This + ")" });
             foreach (var result in resultset)
                 Console.WriteLine($"This is result: {result.id} with {result.text}");
         }
